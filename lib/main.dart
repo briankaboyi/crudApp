@@ -5,6 +5,7 @@ import 'package:simple_data/controllers/ViewIndividualController.dart';
 import 'package:simple_data/controllers/button_controller.dart';
 import 'package:simple_data/controllers/dataList_section_controller.dart';
 import 'package:simple_data/controllers/home_page_controller.dart';
+import 'package:simple_data/pages/newpage.dart';
 
 import 'pages/home_page.dart';
 
@@ -32,7 +33,8 @@ class MyApp extends StatelessWidget {
           colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
           useMaterial3: true,
         ),
-        home: HomePage(),
+        // home: HomePage(),
+        home: newPage(),
       );
     }
     );

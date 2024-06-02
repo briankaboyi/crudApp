@@ -40,6 +40,26 @@ class AppModel {
     }
   }
 
+  Future updateData(body,id) async{
+    try{
+      var records = await pb.collection('students').update(id, body: body);
+      print("update data response >>>${records.data}");
+      return records;
+    }catch(e){
+      print("Failed to update data: $e");
+    }
+  }
+  Future getById(id) async{
+    try{
+      final record = await pb.collection('students').getOne(id,
+        expand: 'relField1,relField2.subRelField',
+      );
+      return record.data;
+    }catch(e){
+      print("Failed to update data: $e");
+    }
+  }
+
   Future<void> signIn() async {
     final authData = await pb
         .collection('users')
