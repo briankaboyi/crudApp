@@ -32,7 +32,8 @@ class text_widget extends StatelessWidget {
       softWrap: true,
       textAlign: textAlign,
         overflow: overflow,
-      style: GoogleFonts.getFont("Poppins",
+      style: TextStyle(
+        fontFamily: font,
         color: Color(color),
         fontSize: fontSize.sp,
         fontWeight: fontWeight,height: lineHeight),

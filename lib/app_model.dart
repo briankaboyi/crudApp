@@ -91,3 +91,71 @@ class AppModel {
   //   return response.data;
   // }
 }
+class NotificationsPageController {
+  List choices = [
+    'Raised',
+    'Assigned',
+    'In progress',
+    'Resolved',
+    'Closed',
+  ];
+
+}
+Future<Map<String, dynamic>> getTickets(String state) async {
+
+  Map<String, dynamic> response = {
+    'data': [
+      {
+        'ticketNo': '098',
+        'state': 'Raised',
+        'description': 'No Power',
+        'dateCreated': '30/01/2020'
+      },
+      {
+        'ticketNo': '098',
+        'state': 'Resolved',
+        'description': 'No Power',
+        'dateCreated': '30/01/2020'
+      },
+      {
+        'ticketNo': '099',
+        'state': 'In progress',
+        'description': 'No Power',
+        'dateCreated': '30/01/2020'
+      },
+      {
+        'ticketNo': '100',
+        'state': 'Closed',
+        'description': 'No Power',
+        'dateCreated': '30/01/2020'
+      },
+      {
+        'ticketNo': '101',
+        'state': 'Assigned',
+        'description': 'No Power',
+        'dateCreated': '30/01/2020'
+      },
+    ]
+  };
+
+  return await Future.delayed(
+    Duration(seconds: 4),
+        () {
+      Map<String,dynamic> res = {'data':[]};
+      if(state == "all"){
+        return response;
+      }else{
+
+
+          for(var i in response['data']){
+            if(i['state']==state){
+              res['data'].add(i);
+            }
+          };
+
+        return res;
+      }
+
+    },
+  );
+}
