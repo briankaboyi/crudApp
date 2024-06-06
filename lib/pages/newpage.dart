@@ -6,6 +6,7 @@ import 'package:get/get.dart';
 import 'package:lottie/lottie.dart';
 import 'package:pinput/pinput.dart';
 import 'package:simple_data/app_model.dart';
+import 'package:simple_data/controllers/test_controller.dart';
 import 'package:simple_data/widgets/text_widget.dart';
 
 class newPage extends GetView {
@@ -40,6 +41,16 @@ class newPage extends GetView {
 
               },
               child: Text('call function')),
+          ElevatedButton(
+              onPressed: () async {
+ Function lambda = (int n){return n*n*n;};
+                Get.find<TestController>();
+                int testingLamda(Function lambda,int param){
+                  return lambda(param);
+                }
+print(testingLamda(lambda,5));
+              },
+              child: Text('lambda ')),
         ],
       ),
     );

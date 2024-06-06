@@ -5,9 +5,8 @@ import 'package:simple_data/controllers/ViewIndividualController.dart';
 import 'package:simple_data/controllers/button_controller.dart';
 import 'package:simple_data/controllers/dataList_section_controller.dart';
 import 'package:simple_data/controllers/home_page_controller.dart';
+import 'package:simple_data/controllers/test_controller.dart';
 import 'package:simple_data/pages/newpage.dart';
-
-import 'pages/home_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -23,6 +22,7 @@ class MyApp extends StatelessWidget {
     Get.put(ButtonController());
     Get.put(DataListSectionController());
     Get.put(ViewIndividualController());
+    Get.lazyPut(() => TestController());
     return ScreenUtilInit(
         designSize: const Size(360, 690),
     builder:(_ , child){
